@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         if (GetComponent<PhotonView>().IsMine)
         {
             rig.velocity = (transform.right * speed * Input.GetAxis("Horizontal")) + (transform.up * rig.velocity.y);
-
+            Debug.Log("Pasamos por aqui");
             if (rig.velocity.x > 0.1f && GetComponent<SpriteRenderer>().flipX)
             {
                 GetComponent<PhotonView>().RPC("RotateSprite", RpcTarget.All, false);
