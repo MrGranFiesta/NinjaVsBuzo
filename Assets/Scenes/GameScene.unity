@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 0
@@ -204,7 +201,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440935171}
   m_Enabled: 1
-  m_CellSize: {x: 0.48, y: 0.48, z: 0}
+  m_CellSize: {x: 0.46, y: 0.46, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -236,8 +233,8 @@ GameObject:
   - component: {fileID: 1584959367}
   - component: {fileID: 1584959366}
   - component: {fileID: 1584959365}
-  - component: {fileID: 1584959364}
   - component: {fileID: 1584959363}
+  - component: {fileID: 1584959364}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -268,6 +265,7 @@ CompositeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584959361}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -291,14 +289,109 @@ CompositeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1584959365}
+    m_ColliderPaths:
+    - - X: 87358000
+        Y: 4508000
+      - X: 82658008
+        Y: 4508000
+      - X: 82658008
+        Y: -91999
+      - X: 87358000
+        Y: -91999
+    - - X: -82842000
+        Y: 4508000
+      - X: -87541992
+        Y: 4508000
+      - X: -87541992
+        Y: -91999
+      - X: -82842000
+        Y: -91999
+    - - X: 87358000
+        Y: -92000
+      - X: 82658008
+        Y: -92000
+      - X: 82658008
+        Y: -13892000
+      - X: 68858000
+        Y: -13892000
+      - X: 68858000
+        Y: -36892000
+      - X: 13708000
+        Y: -36892000
+      - X: 13708000
+        Y: -32292002
+      - X: 9108000
+        Y: -32292002
+      - X: 9108000
+        Y: -27692000
+      - X: 4508000
+        Y: -27692000
+      - X: 4508000
+        Y: -23092000
+      - X: -91999
+        Y: -23092000
+      - X: -91999
+        Y: -36892000
+      - X: -92000
+        Y: -36892000
+      - X: -92000
+        Y: -27692000
+      - X: -4692000
+        Y: -27692000
+      - X: -4692000
+        Y: -32292002
+      - X: -9292001
+        Y: -32292002
+      - X: -9292001
+        Y: -36892000
+      - X: -69042000
+        Y: -36892000
+      - X: -69042000
+        Y: -13892000
+      - X: -82842000
+        Y: -13892000
+      - X: -82842000
+        Y: -92000
+      - X: -87541992
+        Y: -92000
+      - X: -87541992
+        Y: -41492000
+      - X: 87358000
+        Y: -41492000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 8.73577, y: -4.1492}
+      - {x: 8.73577, y: 0.4508}
+      - {x: 8.2658, y: 0.4507707}
+      - {x: 8.265771, y: -1.3892}
+      - {x: 6.8858, y: -1.3892293}
+      - {x: 6.8857703, y: -3.6892}
+      - {x: 1.3708, y: -3.6891704}
+      - {x: 1.3707707, y: -3.2292001}
+      - {x: 0.91080004, y: -3.2291708}
+      - {x: 0.9107707, y: -2.7692}
+      - {x: 0.4508, y: -2.7691705}
+      - {x: 0.4507707, y: -2.3092}
+      - {x: -0.009199901, y: -2.3092291}
+      - {x: -0.0092294, y: -2.7692}
+      - {x: -0.46920002, y: -2.7692292}
+      - {x: -0.4692294, y: -3.2292001}
+      - {x: -0.9292001, y: -3.2292297}
+      - {x: -0.9292295, y: -3.6892}
+      - {x: -6.9042, y: -3.6891704}
+      - {x: -6.9042296, y: -1.3892}
+      - {x: -8.2842, y: -1.3891706}
+      - {x: -8.284229, y: 0.4508}
+      - {x: -8.754199, y: 0.4507707}
+      - {x: -8.754169, y: -4.1492}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -338,6 +431,7 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584959361}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -361,7 +455,8 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 1
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -383,6 +478,8 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1412,7 +1509,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -19, y: -9, z: 0}
   m_Size: {x: 38, y: 10, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileAnchor: {x: 0.48, y: 0.48, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
