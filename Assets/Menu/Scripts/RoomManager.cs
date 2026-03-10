@@ -5,31 +5,42 @@ using Photon.Pun;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-public class RoomManager : MonoBehaviourPunCallbacks {
-  public static RoomManager Instance;
+public class RoomManager : MonoBehaviourPunCallbacks
+{
+    public static RoomManager Instance;
 
-  private void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-      return;
+    private void Awake()
+    {
+        Debug.Log("RoomManager - Awake");
+        if (Instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+        Instance = this;
     }
-    DontDestroyOnLoad(gameObject);
-    Instance = this;
-  }
 
-  public override void OnEnable() {
-    base.OnEnable();
-    SceneManager.sceneLoaded += OnSceneLoaded;
-  }
-
-  public override void OnDisable() {
-    base.OnDisable();
-  }
-
-  void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode) {
-    if (scene.buildIndex == 1) {
-      // This is the game scene
-      PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
+    public override void OnEnable()
+    {
+        Debug.Log("RoomManager - OnEnable");
+        base.OnEnable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-  }
+
+    public override void OnDisable()
+    {
+        Debug.Log("RoomManager - OnDisable");
+        base.OnDisable();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        Debug.Log("RoomManager - OnSceneLoaded");
+        if (scene.buildIndex == 1)
+        {
+            // This is the game scene
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
+        }
+    }
 }
