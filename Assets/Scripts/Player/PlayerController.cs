@@ -79,8 +79,13 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat(AnimationConst.VelocityX, Mathf.Abs(rig.velocity.x));
             anim.SetFloat(AnimationConst.VelocityY, rig.velocity.y);
         }
-        // Para el jugador remoto NO actualizamos el Animator manualmente:
-        // PhotonAnimatorView ya sincroniza velocityX y velocityY por red.
+        else
+        {
+            // Para jugadores remotos: actualizamos el Animator con la velocidad
+            // que llega sincronizada por PhotonRigidbody2DView.
+            anim.SetFloat(AnimationConst.VelocityX, Mathf.Abs(rig.velocity.x));
+            anim.SetFloat(AnimationConst.VelocityY, rig.velocity.y);
+        }
     }
 
     [PunRPC]
