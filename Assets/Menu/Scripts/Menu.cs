@@ -24,6 +24,8 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Menu - Close");
         open = false;
+        Debug.Log("Close Menu Bug1");
         gameObject.SetActive(false);
+        Debug.Log("Close Menu Bug2");
     }
 }

@@ -9,14 +9,14 @@ public class RoomListItem : MonoBehaviour
     RoomInfo info;
     public void SetUp(RoomInfo _info)
     {
-        Debug.Log("PlayerManager - SetUp");
+        Debug.Log("RoomListItem - SetUp");
         info = _info;
         label.text = _info.Name;
     }
 
     public void OnClick()
     {
-        Debug.Log("PlayerManager - OnClick");
+        Debug.Log("RoomListItem - OnClick");
         Launcher.Instance.JoinRoom(info);
     }
 }

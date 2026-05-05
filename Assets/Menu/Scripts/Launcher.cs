@@ -23,18 +23,20 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-                Debug.Log("Launcher - Awake");
+        Debug.Log("Launcher - Awake");
         Instance = this;
     }
 
     private void Start()
     {
+        Debug.Log("Launcher - Start");
         Debug.Log("Connecting to master...");
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
+        Debug.Log("Launcher - OnConnectedToMaster");
         Debug.Log("Connected to master!");
         PhotonNetwork.JoinLobby();
         // Automatically load scene for all clients when the host loads a scene

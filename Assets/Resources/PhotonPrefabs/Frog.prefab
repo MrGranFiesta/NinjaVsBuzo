@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6426254919942947378}
   - component: {fileID: -5970449485923217370}
   - component: {fileID: -3389403277093305967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Frog
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &967310165337852843
 BoxCollider2D:

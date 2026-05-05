@@ -37,10 +37,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         Debug.Log("RoomManager - OnSceneLoaded");
-        if (scene.buildIndex == 1)
-        {
-            // This is the game scene
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
-        }
+        // El spawn del jugador lo gestiona GameManager en la GameScene.
     }
 }
