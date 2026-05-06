@@ -64,11 +64,11 @@ public class Bat : MonoBehaviourPun
     }
 
     public Transform GetPlayerNearby()     {
-        if (GameManager.Players == null || GameManager.Players.Count == 0)
+        if (SceneManager.Players == null || SceneManager.Players.Count == 0)
         {
             return null;
         }
-        return GameManager.Players.OrderBy(j => Vector2.Distance(transform.position, j.position))
+        return SceneManager.Players.OrderBy(j => Vector2.Distance(transform.position, j.position))
             .FirstOrDefault();
     }
 }

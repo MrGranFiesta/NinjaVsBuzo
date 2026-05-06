@@ -1887,6 +1887,7 @@ GameObject:
   - component: {fileID: 1071897427}
   - component: {fileID: 1071897426}
   - component: {fileID: 1071897428}
+  - component: {fileID: 1071897429}
   m_Layer: 5
   m_Name: PointsPlayer2Txt
   m_TagString: Untagged
@@ -2023,9 +2024,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071897424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d0c75699dc9e84c9d95d0739ecb3fd, type: 3}
+  m_Script: {fileID: 11500000, guid: ef77478b700cec942854281659492f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1071897429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071897424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1001
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1085275131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2368,7 +2391,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1516509500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e66cda2951f11364e8c8195e8193f555, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d29b36d2c167f0479c3c7dcb86da096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1530916667

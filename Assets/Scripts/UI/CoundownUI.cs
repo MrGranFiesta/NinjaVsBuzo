@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class CoundownUI : MonoBehaviour
     {
         while (countdownTime > 0)
         {
-            countdownText.text = countdownTime.ToString();
+            countdownText.text = String.Format("{0:000}", countdownTime);
             yield return new WaitForSeconds(1);
             countdownTime--;
         }

@@ -25,7 +25,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("RoomManager - OnEnable");
         base.OnEnable();
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public override void OnDisable()
