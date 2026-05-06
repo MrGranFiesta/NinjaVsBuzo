@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 5159211461658682881}
   - component: {fileID: -1076544113988712750}
   - component: {fileID: -6815732240232086649}
+  - component: {fileID: 3791908835850205528}
   m_Layer: 0
-  m_Name: Fruit
+  m_Name: Apple
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,3 +160,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a786b72d39bca647b02be2a1072e214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3791908835850205528
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952908198872928089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

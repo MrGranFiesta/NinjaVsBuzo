@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        MainClass.CustomEvents.OnRegistryPlayer.Invoke(gameObject.transform);
+
         if (photonView.IsMine)
         {
             Camera.main.transform.SetParent(transform);

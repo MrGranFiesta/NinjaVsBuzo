@@ -1,4 +1,6 @@
 using Photon.Pun;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -6,7 +8,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     private bool playerSpawned = false;
     [SerializeField] private Transform[] SpawnPoint;
-
+    [NonSerialized] public static List<Transform> Players = new List<Transform>();
+    
     private void Awake()
     {
         if (SpawnPoint == null || SpawnPoint.Length != 2 || SpawnPoint.Any( i => i == null))
@@ -18,7 +21,12 @@ public class GameManager : MonoBehaviourPunCallbacks
             Transform spawnPoint2 = new GameObject("SpawnPoint2").transform;
             spawnPoint2.position = new Vector3(2, -3.5f, 0);
             SpawnPoint[1] = spawnPoint2;
-        }    
+        }
+        
+        MainClass.CustomEvents.OnRegistryPlayer.AddListener((player) =>
+        {
+            Players.Add(player);
+        });
     }
 
     void Start()

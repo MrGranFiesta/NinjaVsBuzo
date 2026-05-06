@@ -1,12 +1,13 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Photon.Pun;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Bat : MonoBehaviour
+public class Bat : MonoBehaviourPun
 {
-    private Transform[] players;
+    //private Transform[] players;
     private float distancia;
 
     [NonSerialized] public Vector3 PointInital;
@@ -22,16 +23,22 @@ public class Bat : MonoBehaviour
 
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag(TagsUtils.Player)
+        //TODO NO encuentra a los jugadores, revisar
+        /*players = GameObject.FindGameObjectsWithTag(TagsUtils.Player)
             .Select(p => p.transform)
-            .ToArray();
+            .ToArray();*/
     }
+
+    
     private void Update()
     {
+        if (!PhotonNetwork.IsMasterClient) return;
+        
         distancia = GetDistancePlayerNearby();
         animator.SetFloat("Distancia", distancia);
     }
 
+    [PunRPC]
     public void FlipX(Vector3 objetivo)
     {
         if (transform.position.x < objetivo.x)
@@ -57,11 +64,11 @@ public class Bat : MonoBehaviour
     }
 
     public Transform GetPlayerNearby()     {
-        if (players == null || players.Length == 0)
+        if (GameManager.Players == null || GameManager.Players.Count == 0)
         {
             return null;
         }
-        return players.OrderBy(j => Vector2.Distance(transform.position, j.position))
+        return GameManager.Players.OrderBy(j => Vector2.Distance(transform.position, j.position))
             .FirstOrDefault();
     }
 }

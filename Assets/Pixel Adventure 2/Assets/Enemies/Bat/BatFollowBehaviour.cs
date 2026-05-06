@@ -20,11 +20,13 @@ public class BatFollowBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("BatFollowBehaviour - OnStateUpdate");
-        Vector3 playerPos = bat.GetPlayerNearby().position;
+        Transform playerNearby = bat.GetPlayerNearby();
         
-        if (playerPos == null) {
+        if (playerNearby == null) {
             return;
         }
+
+        Vector3 playerPos = playerNearby.position;
 
         animator.transform.position = Vector2.MoveTowards(
             animator.transform.position,
