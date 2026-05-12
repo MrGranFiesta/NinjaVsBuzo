@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6815732240232086649}
   - component: {fileID: 3791908835850205528}
   m_Layer: 0
-  m_Name: Cherries
+  m_Name: Bananas
   m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4570538037665054336, guid: 3d6be91968cb95546ac95aeff5e52f84, type: 3}
+  m_Sprite: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a786b72d39bca647b02be2a1072e214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 1
+  points: 5
 --- !u!95 &3791908835850205528
 Animator:
   serializedVersion: 7
@@ -171,7 +171,7 @@ Animator:
   m_GameObject: {fileID: 3952908198872928089}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 128b79c028607064e96888db13006394, type: 2}
+  m_Controller: {fileID: 9100000, guid: fca84c81cf8e4ab4787d70d1e5de6e1e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a365b28a555dd41ac32654acf4c590, type: 3}
+  m_Name: FruitManager
+  m_EditorClassIdentifier: 
+  fruitTypes:
+  - points: 1
+    spawnProbability: 29
+    animatorController: {fileID: 9100000, guid: 77afcf1bcf32f164695d93031cf4f4d9, type: 2}
+    sprite: {fileID: 7293598183456022363, guid: 1ddc9afd21fec77489b1248d18f31b68, type: 3}
+  - points: 2
+    spawnProbability: 14
+    animatorController: {fileID: 9100000, guid: 128b79c028607064e96888db13006394, type: 2}
+    sprite: {fileID: -4570538037665054336, guid: 3d6be91968cb95546ac95aeff5e52f84, type: 3}
+  - points: 2
+    spawnProbability: 14
+    animatorController: {fileID: 9100000, guid: 7a5eb1928217cf748826767b997f6070, type: 2}
+    sprite: {fileID: 1775669009216684005, guid: a2c110585eb710b408972fbc3b96136d, type: 3}
+  - points: 3
+    spawnProbability: 10
+    animatorController: {fileID: 9100000, guid: e106f41c6e6764e4cace96e00d15d86f, type: 2}
+    sprite: {fileID: 4138223980208024357, guid: 5100b75572e484e458e4340e2afe9454, type: 3}
+  - points: 3
+    spawnProbability: 10
+    animatorController: {fileID: 9100000, guid: 746a6dce2741b334ab447639bb29ce4c, type: 2}
+    sprite: {fileID: 4121880872312635667, guid: ffc9f271fad56c243a45f100b9dc6778, type: 3}
+  - points: 3
+    spawnProbability: 10
+    animatorController: {fileID: 9100000, guid: 596651aedbc4db34d95351d7f8b71e7c, type: 2}
+    sprite: {fileID: 837517196756356485, guid: 131e485692e27e84c86170dad18cda85, type: 3}
+  - points: 4
+    spawnProbability: 8
+    animatorController: {fileID: 9100000, guid: ffd399b9f17d1dc4babb134e2eea4f41, type: 2}
+    sprite: {fileID: 3776312371561069292, guid: 031678d507e557a41b7a16fc33bf6c39, type: 3}
+  - points: 5
+    spawnProbability: 6
+    animatorController: {fileID: 9100000, guid: fca84c81cf8e4ab4787d70d1e5de6e1e, type: 2}
+    sprite: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}

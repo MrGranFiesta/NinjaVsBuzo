@@ -1,11 +1,10 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BatReturnBehaviour : StateMachineBehaviour
 {
     [SerializeField] private float spreed;
-    //private Vector3 pointInital;
     private Bat bat;
     private int debuger = 0; 
 
@@ -13,7 +12,6 @@ public class BatReturnBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("BatReturnBehaviour - OnStateEnter");
         bat = animator.gameObject.GetComponent<Bat>();
     }
 
@@ -27,6 +25,7 @@ public class BatReturnBehaviour : StateMachineBehaviour
             spreed * Time.deltaTime
         );
         bat.FlipX(bat.PointInital);
+        Debug.Log("Posición actual: " + animator.transform.position + ", Punto inicial: " + bat.PointInital);
         if (animator.transform.position == bat.PointInital)
         {
             Debug.Log("Llego " + ++debuger);

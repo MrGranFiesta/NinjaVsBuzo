@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6a2bca9bd409048bba4abc39759bae, type: 3}
+  m_Name: WorldSettings
+  m_EditorClassIdentifier: 
+  mapWidth: 50
+  mapHeight: 30
+  platformPrefab: {fileID: 6924845542193146014, guid: 0d693a358198df647b3b6794ed5abe4d, type: 3}
+  wallPrefab: {fileID: 3705896507052692555, guid: d324b324cb597274c9fc51ac55e89ea7, type: 3}
+  platformDensity: 0.2
+  minPlatformWidth: 3
+  maxPlatformWidth: 7
+  enemies:
+  - prefabName: Bat
+    prefab: {fileID: 3312557105684932160, guid: c0d4863d0bd6e784fbee87eb33a4cba8, type: 3}
+    spawnProbability: 0.4
+  - prefabName: Chameleon
+    prefab: {fileID: 364947272477010397, guid: 84dab46c3f0ca724d8c297d043458c28, type: 3}
+    spawnProbability: 0.6
+  maxEnemies: 5
+  fruits:
+  - prefabName: Apple
+    prefab: {fileID: 3952908198872928089, guid: ec37e4f4cfe0f9f4d8043116845f5112, type: 3}
+    spawnProbability: 0.29
+  - prefabName: Bananas
+    prefab: {fileID: 3952908198872928089, guid: f1f3711df740eaf478968ef4a3d5079b, type: 3}
+    spawnProbability: 0.06
+  - prefabName: Cherries
+    prefab: {fileID: 3952908198872928089, guid: 1c383b42f5b134b44be655d8f27390c5, type: 3}
+    spawnProbability: 0.14
+  - prefabName: Kiwi
+    prefab: {fileID: 3952908198872928089, guid: c4ae213de71b8b540a5e028d835b919f, type: 3}
+    spawnProbability: 0.1
+  - prefabName: Melon
+    prefab: {fileID: 3952908198872928089, guid: b1cd77ce2d048b04a86f588a3ce862cf, type: 3}
+    spawnProbability: 0.07
+  - prefabName: Orange
+    prefab: {fileID: 3952908198872928089, guid: fff23f4a78c5d82469e3d8728705883b, type: 3}
+    spawnProbability: 0.1
+  - prefabName: Pineapple
+    prefab: {fileID: 3952908198872928089, guid: 84b0cbfced2be294dbebc87bd87d53bb, type: 3}
+    spawnProbability: 0.1
+  - prefabName: Strawberry
+    prefab: {fileID: 3952908198872928089, guid: fd1088083ac6f7942886ac18b22ed65c, type: 3}
+    spawnProbability: 0.15
+  maxFruits: 30

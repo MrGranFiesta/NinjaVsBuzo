@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a786b72d39bca647b02be2a1072e214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 1
+  points: 3
 --- !u!95 &3791908835850205528
 Animator:
   serializedVersion: 7

@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class CoundownUI : MonoBehaviour
 {
-    private int countdownTime = 360;
+    private int countdownTime = 180;
     private TextMeshProUGUI countdownText;
 
     void Awake()
@@ -24,6 +25,18 @@ public class CoundownUI : MonoBehaviour
             yield return new WaitForSeconds(1);
             countdownTime--;
         }
-        //TODO LOAD SCENE RESULT
+
+        // Guardamos los puntos del rival en PlayerPrefs antes de cambiar de escena
+        if (RivalPointPlayerUI.Instance != null)
+        {
+            string rivalText = RivalPointPlayerUI.Instance.GetComponent<TextMeshProUGUI>().text;
+            if (int.TryParse(rivalText, out int rivalScore))
+            {
+                PlayerPrefs.SetInt("RivalScore", rivalScore);
+                PlayerPrefs.Save();
+            }
+        }
+
+        SceneManager.LoadScene("Result");
     }
 }

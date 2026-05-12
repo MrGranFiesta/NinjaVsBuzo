@@ -5,9 +5,9 @@ using Photon.Pun;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class Bat : MonoBehaviourPun
 {
-    //private Transform[] players;
     private float distancia;
 
     [NonSerialized] public Vector3 PointInital;
@@ -20,15 +20,6 @@ public class Bat : MonoBehaviourPun
         PointInital = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    private void Start()
-    {
-        //TODO NO encuentra a los jugadores, revisar
-        /*players = GameObject.FindGameObjectsWithTag(TagsUtils.Player)
-            .Select(p => p.transform)
-            .ToArray();*/
-    }
-
     
     private void Update()
     {
@@ -63,12 +54,23 @@ public class Bat : MonoBehaviourPun
         return Vector2.Distance(transform.position, playerNearby.position);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(TagsUtils.IsPlayer(collision.gameObject))
+        {
+            MainClass.GameManager.MinusScore();
+            collision.gameObject
+                .GetComponent<PlayerController>()
+                ?.ApplyInvulnerability();
+        }
+    }
+
     public Transform GetPlayerNearby()     {
-        if (SceneManager.Players == null || SceneManager.Players.Count == 0)
+        if (SceneGameManager.Players == null || SceneGameManager.Players.Count == 0)
         {
             return null;
         }
-        return SceneManager.Players.OrderBy(j => Vector2.Distance(transform.position, j.position))
+        return SceneGameManager.Players.OrderBy(j => Vector2.Distance(transform.position, j.position))
             .FirstOrDefault();
     }
 }

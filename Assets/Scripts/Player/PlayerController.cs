@@ -1,10 +1,11 @@
 using Photon.Pun;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(PhotonView))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPun
 {
     public float speed = 1;
     public float jumpForce = 200;
@@ -96,5 +97,27 @@ public class PlayerController : MonoBehaviour
         if (spriteRenderer == null) return;
         spriteRenderer.flipX = rotate;
         lastFlipState = rotate;
+    }
+
+    public void ApplyInvulnerability()
+    {
+        StartCoroutine(InvulnerabilityCoroutine());
+    }
+
+    private IEnumerator InvulnerabilityCoroutine()
+    {
+        gameObject.layer = LayerMask.NameToLayer(LayerUtils.Invulnerability);
+        this.photonView.RPC("SetAlpha", RpcTarget.AllBuffered, 0.4f);
+        yield return new WaitForSeconds(3f);
+        this.photonView.RPC("SetAlpha", RpcTarget.AllBuffered, 1f);
+        gameObject.layer = LayerMask.NameToLayer(LayerUtils.Player);
+    }
+
+    [PunRPC]
+    private void SetAlpha(float alpha)
+    {
+        Color c = spriteRenderer.color;
+        c.a = alpha;
+        spriteRenderer.color = c;
     }
 }

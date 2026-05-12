@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviourPunCallbacks
+public class SceneGameManager : MonoBehaviourPunCallbacks
 {
     private bool playerSpawned = false;
     [SerializeField] private Transform[] SpawnPoint;
